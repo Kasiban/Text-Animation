@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(jump.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  font-size: 6em;
+  display: flex;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Indie Flower', cursive; 
+}
+
+
+ul li {
+  list-style: none;
+}
+
+.firstWord {
+  position: relative;
+  animation: first;
+  animation-duration: 3s;
+}
+
+@keyframes first {
+  0% {left: -1000px;}
+  100% {left: 0px;}
+}
+
+.secondWord {
+  position: relative;
+  animation: second;
+  animation-duration: 3s;
+}
+
+@keyframes second {
+  0% {top: -500px;}
+  50% {top: 150px;}
+  100% {top: 0;}
+}
+
+.thirdWord {
+  position: relative;
+  animation: third;
+  animation-duration: 4s;
+  animation-delay: 3s;
+}
+
+@keyframes third {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(90deg);}
+  50% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
+}
+
+.lastWord {
+  position: relative;
+  animation: last;
+  animation-delay: 6s;
+  animation-duration: 2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes last {
+  0% {right: -1000px; opacity: 1;}
+  80% {right: 10px; opacity: 1;}
+  100% {right: 0px; opacity: 1;}
+}
+
+.thirdWord span:last-child {
+  color: red;
+  display: inline-block;
+  transition: 1s;
+  animation: letter;
+  animation-duration: 2s;
+  animation-delay: 8s;
+}
+
+@keyframes letter {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(360deg);}
+  70% {transform: rotateY(180deg);}
+  100% {transform: rotateY(360deg);}
+}
+
+@media(max-width: 560px) {
+  body {
+    width: 100vw;
+    background-position-x: right 18%;
+    
+  }
+  ul {
+    display: block;
+  }
+  .thirdWord {
+    display: inline-block;
+  }
+  .lastWord {
+    display: inline-block;
+    
+  }
+}
